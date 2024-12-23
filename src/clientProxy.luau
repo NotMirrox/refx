@@ -27,11 +27,11 @@ return function(constructor, ...)
 			return reservedFunctions[index]
 		end
 
-		local foundMethod = constructor[index]
-		logger.assert(foundMethod ~= nil, `Effect is missing method "{index}" to call!`)
+		local found = effect[index]
+		logger.assert(found ~= nil, `Effect is missing method "{index}" to call!`)
 		logger.assert(not effect.IsDestroyed, `Cannot :{index}() after effect has been destroyed.`)
 
-		return foundMethod
+		return found
 	end
 
 	function mt.__newindex(_self, index)
