@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type Signal from "@rbxts/signal";
+import type Signal from "@rbxts/signal"
 
 export declare abstract class BaseEffect<T extends unknown[] = []> {
-	public readonly Destroyed: Signal<() => void>;
+	public readonly Destroyed: Signal<void>;
 	public readonly IsDestroyed: boolean;
 
 	protected DestroyOnEnd: boolean;
