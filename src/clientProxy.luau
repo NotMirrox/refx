@@ -28,7 +28,7 @@ return function(constructor, ...)
 		end
 
 		local found = effect[index]
-		logger.assert(not effect.IsDestroyed, `Cannot :{index}() after effect has been destroyed.`)
+		logger.assert(not effect.IsDestroyed, `Cannot index {index} after effect has been destroyed.`)
 
 		return found
 	end

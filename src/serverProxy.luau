@@ -69,8 +69,8 @@ return function(ctorName, ...)
 		end
 
 		local foundMethod = constructor[index]
-		logger.assert(initialized, `Cannot :{index}() before effect has started.`)
-		logger.assert(not destroyed, `Cannot :{index}() after effect has been destroyed.`)
+		logger.assert(initialized, `Cannot index {index} before effect has started.`)
+		logger.assert(not destroyed, `Cannot index {index} after effect has been destroyed.`)
 
 		if not cachedSenders[index] then
 			cachedSenders[index] = function(...)
