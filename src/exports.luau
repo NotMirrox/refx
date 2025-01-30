@@ -1,9 +1,9 @@
 local package = script.Parent
 
 local baseEffect = require(package.baseEffect)
-local wrapper = require(package.wrapper)
 local client = require(package.client)
 local configuration = require(package.configuration)
+local wrapper = require(package.wrapper)
 
 return {
 	BaseEffect = baseEffect,

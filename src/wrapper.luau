@@ -1,13 +1,13 @@
 local baseEffect = require(script.Parent.baseEffect)
 local runService = game:GetService("RunService")
 
-local createProxy = require(script.Parent.serverProxy)
 local createClientProxy = require(script.Parent.clientProxy)
+local createProxy = require(script.Parent.serverProxy)
 
-local logger = require(script.Parent.utilities.logger)
-local instanceofConstructor = require(script.Parent.utilities.instanceofConstructor)
-local entries = require(script.Parent.client.entries)
 local effectsMap = require(script.Parent.effectsMap)
+local entries = require(script.Parent.client.entries)
+local instanceofConstructor = require(script.Parent.utilities.instanceofConstructor)
+local logger = require(script.Parent.utilities.logger)
 local wrapper = {}
 
 function wrapper.VisualEffectDecorator(ctor)

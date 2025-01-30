@@ -1,10 +1,10 @@
 local configuration = {}
 local configs = {}
 
-local t = require(script.Parent.modules.t)
+local baseEffect = require(script.Parent.baseEffect)
 local logger = require(script.Parent.utilities.logger)
 local map = require(script.Parent.effectsMap)
-local baseEffect = require(script.Parent.baseEffect)
+local t = require(script.Parent.modules.t)
 
 local configGuard = t.interface({
 	Unreliable = t.optional(t.boolean),

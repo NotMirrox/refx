@@ -6,8 +6,8 @@ local BaseEffect = setmetatable({}, {
 BaseEffect.__index = BaseEffect
 
 local modules = script.Parent.modules
-local signal = require(modules.signal)
 local logger = require(script.Parent.utilities.logger)
+local signal = require(modules.signal)
 
 function BaseEffect.constructor(self, ...)
 	self.Configuration = { ... }

@@ -1,7 +1,7 @@
 local utils = script.Parent.utilities
-local logger = require(utils.logger)
-local entries = require(script.Parent.client.entries)
 local client = require(script.Parent.client)
+local entries = require(script.Parent.client.entries)
+local logger = require(utils.logger)
 
 return function(constructor, ...)
 	logger.assert(client.IsInitialized(), `Cannot create an effect locally before client starts.`)

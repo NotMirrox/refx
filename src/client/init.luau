@@ -1,10 +1,10 @@
 local client = {}
 
 local utils = script.Parent.utilities
-local logger = require(utils.logger)
-local remotes = require(script.Parent.remotes)
-local map = require(script.Parent.effectsMap)
 local entries = require(script.entries)
+local logger = require(utils.logger)
+local map = require(script.Parent.effectsMap)
+local remotes = require(script.Parent.remotes)
 
 local runService = game:GetService("RunService")
 

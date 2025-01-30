@@ -1,9 +1,9 @@
 local utils = script.Parent.utilities
 
-local remotes = require(script.Parent.remotes)
-local logger = require(utils.logger)
-local createIdGenerator = require(utils.idGenerator)
 local configuration = require(script.Parent.configuration)
+local createIdGenerator = require(utils.idGenerator)
+local logger = require(utils.logger)
+local remotes = require(script.Parent.remotes)
 
 local map = require(script.Parent.effectsMap)
 local nextId = createIdGenerator()
