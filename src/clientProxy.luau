@@ -28,7 +28,6 @@ return function(constructor, ...)
 		end
 
 		local found = effect[index]
-		logger.assert(found ~= nil, `Effect is missing method "{index}" to call!`)
 		logger.assert(not effect.IsDestroyed, `Cannot :{index}() after effect has been destroyed.`)
 
 		return found

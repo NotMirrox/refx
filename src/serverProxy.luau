@@ -71,7 +71,6 @@ return function(ctorName, ...)
 		local foundMethod = constructor[index]
 		logger.assert(initialized, `Cannot :{index}() before effect has started.`)
 		logger.assert(not destroyed, `Cannot :{index}() after effect has been destroyed.`)
-		logger.assert(foundMethod ~= nil, `Effect is missing method "{index}" to call!`)
 
 		if not cachedSenders[index] then
 			cachedSenders[index] = function(...)
