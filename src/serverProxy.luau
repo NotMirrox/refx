@@ -68,7 +68,6 @@ return function(ctorName, ...)
 			return reservedFunctions[index]
 		end
 
-		local foundMethod = constructor[index]
 		logger.assert(initialized, `Cannot index {index} before effect has started.`)
 		logger.assert(not destroyed, `Cannot index {index} after effect has been destroyed.`)
 
@@ -77,7 +76,7 @@ return function(ctorName, ...)
 				local callArgs = { omitSelf(...) }
 				callArgs[0] = "" -- If we assign index 0 then Roblox will treat this table as a map and arguments that come after 0 don't disappear.
 
-				local config = configuration.GetConfig(foundMethod)
+				local config = configuration.GetConfig(constructor[index])
 				if config.Unreliable == true then
 					remotes.__refx_communicator_urel:firePlayers(players, id, index, callArgs)
 					return

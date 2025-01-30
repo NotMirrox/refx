@@ -26,11 +26,9 @@ return function(constructor, ...)
 		if reservedFunctions[index] then
 			return reservedFunctions[index]
 		end
-
-		local found = effect[index]
 		logger.assert(not effect.IsDestroyed, `Cannot index {index} after effect has been destroyed.`)
 
-		return found
+		return effect[index]
 	end
 
 	function mt.__newindex(_self, index)
