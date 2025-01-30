@@ -12,6 +12,16 @@ local t = require(script.Parent.modules.t)
 
 local Players = game:GetService("Players")
 
+local allowedIndexes = {
+	"Configuration",
+	"DisableLeakWarning",
+	"IsDestroyed",
+	"MaxLifetime",
+	"DestroyOnLifecycleEnd",
+	"DestroyOnEnd",
+	"Destroyed",
+}
+
 return function(ctorName, ...)
 	local params = { ... }
 	params[0] = ""
@@ -69,7 +79,10 @@ return function(ctorName, ...)
 		end
 
 		logger.assert(initialized, `Cannot index {index} before effect has started.`)
-		logger.assert(not destroyed, `Cannot index {index} after effect has been destroyed.`)
+		logger.assert(
+			not destroyed or table.find(allowedIndexes, index) ~= nil,
+			`Cannot index {index} after effect has been destroyed.`
+		)
 
 		if not cachedSenders[index] then
 			cachedSenders[index] = function(...)
