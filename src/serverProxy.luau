@@ -14,7 +14,7 @@ local Players = game:GetService("Players")
 
 return function(ctorName, ...)
 	local params = { ... }
-	params[0] = "__REFX_HOLD"
+	params[0] = ""
 
 	local id = nextId()
 
@@ -75,7 +75,7 @@ return function(ctorName, ...)
 		if not cachedSenders[index] then
 			cachedSenders[index] = function(...)
 				local callArgs = { omitSelf(...) }
-				callArgs[0] = "__REFX_HOLD" -- If we assign index 0 then Roblox will treat this table as a map and arguments that come after 0 don't disappear.
+				callArgs[0] = "" -- If we assign index 0 then Roblox will treat this table as a map and arguments that come after 0 don't disappear.
 
 				local config = configuration.GetConfig(foundMethod)
 				if config.Unreliable == true then
