@@ -25,7 +25,9 @@ return function(constructor, ...)
 
 	local reservedFunctions = {
 		Destroy = function()
-			logger.assert(not effect.IsDestroyed, "Cannot :Destroy() an effect proxy twice.")
+			if effect.IsDestroyed then
+				return proxy
+			end
 
 			effect:Destroy()
 			return proxy
